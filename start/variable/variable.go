@@ -1,4 +1,4 @@
-// package main 是在学习Go语言过程中做的一些小练习
+// package main
 package main
 
 import "fmt"
