@@ -30,5 +30,4 @@ func main() {
 	default:
 		fmt.Println("Undefined！")
 	}
-
 }
