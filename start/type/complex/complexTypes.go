@@ -15,5 +15,4 @@ func main() {
 	fmt.Println(*p)
 	*p = 200
 	fmt.Println(*p)
-
 }
