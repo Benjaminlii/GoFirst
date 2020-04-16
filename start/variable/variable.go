@@ -1,15 +1,9 @@
+// package main 是在学习Go语言过程中做的一些小练习
 package main
 
 import "fmt"
 
-/**
- * @File:  Variable
- * @Description:
- * 练习Go语言中的变量的用法
- *
- * @Author: bytedance
- * @Date: 2020/4/14 15:55
- */
+// 练习Go语言中的变量的用法
 
 // 全局变量的声明
 // 单个全局变量的声明
