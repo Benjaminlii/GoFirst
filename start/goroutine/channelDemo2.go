@@ -6,13 +6,14 @@ import (
 )
 
 // 管道测试
+// 基于管道实现生产者消费者模型
 
 // 管道是引用类型，且必须有类型
 // 管道需要先进行分配内存，即make后才能使用
 // 管道的长度是不可变的
 // 其使用价值在于一边放，一边取
 
-// GoodChannel 基于管道实现生产者消费者模型
+// GoodChannel 商品管道
 var GoodChannel chan int = make(chan int, 10)
 
 // ProduceChannel 生产者阻塞管道
