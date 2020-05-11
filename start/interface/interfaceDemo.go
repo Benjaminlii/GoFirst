@@ -1,7 +1,10 @@
 // package main
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 // 接口
 
@@ -70,5 +73,48 @@ func main() {
 	case two:
 		fmt.Println("two")
 	}
+	fmt.Println("\n\n\n\n\n")
+	jsonString := "{\"workitem_id\":true," +
+		"\"workitem_type_id\":false," +
+		"\"workitem_group\":true," +
+		"\"tasks\":true," +
+		"\"schedule_start\":true," +
+		"\"schedule_end\":true," +
+		"\"doc_link\":true," +
+		"\"doc_html\":true," +
+		"\"doc\":true," +
+		"\"product\":true," +
+		"\"chat_id\":true," +
+		"\"frozen\":true," +
+		"\"archive_status\":true}"
+	jsonString1 := "{\"1\":true," +
+		"\"2\":false," +
+		"\"10\":true}"
 
+	fmt.Println(jsonString)
+	fmt.Println(jsonString1)
+	rtnMap := map[string]bool{}
+	test(jsonString, &rtnMap)
+	fmt.Println("rtmMap = ", rtnMap)
+	fmt.Println("rtmMap[\"doc\"] = ", rtnMap["doc"])
+	fmt.Printf("type of rtmMap = %T\n", rtnMap)
+
+	fmt.Println()
+	rtnMap1 := map[int]bool{}
+	test(jsonString1, &rtnMap1)
+	fmt.Println("rtmMap1 = ", rtnMap1)
+	fmt.Println("rtmMap1[1] = ", rtnMap1[1])
+	fmt.Printf("type of rtmMap1 = %T\n", rtnMap1)
+}
+
+func test(jsonString string, tp interface{}) error {
+	//var rtnMap tp
+	//var rtnMap interface{}
+	//var rtnMap map[string]interface{}
+	err := json.Unmarshal([]byte(jsonString), &tp)
+	if err != nil {
+		fmt.Println("error!!!!!!!")
+		return err
+	}
+	return nil
 }
