@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"errors"
+	"fmt"
+)
 
 // Golang中的切片
 
@@ -64,4 +68,26 @@ func main() {
 	slice5 = append(slice5, 1)
 	slice5 = append(slice5, 2)
 	fmt.Println("slice5 = ", slice5)
+
+	fmt.Println()
+	fmt.Println()
+	fmt.Println()
+	fmt.Println()
+	// json转Slice
+	slice100 := make([]string, 10)
+	jsonString := "[\"123\",\"456\",\"789\"]"
+	test(jsonString, &slice100)
+	fmt.Println(slice100)
+	fmt.Println(slice100[0])
+	fmt.Printf("%T\n", slice100[0])
+}
+
+func test(jsonString string, slice interface{}) error {
+
+	// 转换为JSON格式
+	err := json.Unmarshal([]byte(jsonString), &slice)
+	if err != nil {
+		return errors.New("")
+	}
+	return nil
 }

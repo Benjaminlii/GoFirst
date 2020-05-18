@@ -64,4 +64,11 @@ func main() {
 	}
 	mapArray = append(mapArray, myMap2)
 	fmt.Println(mapArray)
+
+	fmt.Println("------------------------------")
+	map111 := map[string]string{}
+	fmt.Println(map111["a"])
+	fmt.Println(map111["b"])
+	fmt.Println(map111["c"])
+	fmt.Println("d")
 }

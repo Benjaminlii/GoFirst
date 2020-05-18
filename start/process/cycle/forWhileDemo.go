@@ -1,7 +1,9 @@
 // Package main
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //循环结构
 
@@ -23,6 +25,16 @@ func main() {
 	var str = "hello world"
 	for index, ch := range str {
 		fmt.Printf("str[%d] = %c\n", index, ch)
+	}
+	fmt.Println("---------------------------------------")
+	// for each循环的map遍历
+	var mapA = map[string]string{
+		"key1": "val1",
+		"key2": "val2",
+		"key3": "val3",
+	}
+	for key, val := range mapA {
+		fmt.Printf("key = %v, val = %v\n", key, val)
 	}
 
 }
