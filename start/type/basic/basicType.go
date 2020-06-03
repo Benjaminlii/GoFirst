@@ -48,5 +48,6 @@ func main() {
 	fmt.Println(strconv.ParseFloat("123.456789", 32))
 	// ParseBool 参数：字符串
 	fmt.Println(strconv.ParseBool("true"))
+	fmt.Println("abcdefghijklmn"[2:len("abcdefghijklmn")])
 
 }

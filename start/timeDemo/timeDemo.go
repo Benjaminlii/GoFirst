@@ -10,6 +10,7 @@ import (
 
 func main() {
 	now := time.Now()
+	fmt.Println(time.Now().Unix())
 	// 测试time包中的时间格式化
 	// 方式一：使用fmt.Sprintf("格式"，参数)来进行格式化填充
 	fmt.Printf("%d-%d-%d %d:%d:%d\n", now.Year(), now.Month(), now.Day(),
