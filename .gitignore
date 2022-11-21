@@ -19,5 +19,5 @@ log/*
 /.idea
 /.vscode
 /output
-/conf/config.local.yml
+*.yml
 /conf/kitex_remote_config.json
