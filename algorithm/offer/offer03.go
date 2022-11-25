@@ -1,16 +1,21 @@
 package offer
 
-// 剑指 Offer 3. 替换空格
-// 请实现一个函数，将一个字符串s中的每个空格替换成“%20”。
-// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
-func replaceSpace(s string) string {
-	res := []rune{}
-	for _, r := range s {
-		if r == rune(' ') {
-			res = append(res, []rune("%20")...)
-		} else {
-			res = append(res, r)
+// 剑指 Offer 03. 数组中重复的数字
+// 找出数组中重复的数字。
+// 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。
+// 数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。
+// 请找出数组中任意一个重复的数字。
+// 示例 1：
+// 输入：
+// [2, 3, 1, 0, 2, 5, 3]
+// 输出：2 或 3 
+func findRepeatNumber(numbers []int) int {
+	mark := make([]int, len(numbers))
+	for _, v := range numbers {
+		if mark[v] > 0 {
+			return v
 		}
+		mark[v]++
 	}
-	return string(res)
+	return -1
 }
