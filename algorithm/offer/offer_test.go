@@ -67,6 +67,10 @@ func Test_offer10_2(t *testing.T) {
 	fmt.Println(numWays(7))
 	fmt.Println(numWays(0))
 }
+func Test_offer11(t *testing.T) {
+	fmt.Println(minArray([]int{3,4,5,1,2})) // 1
+	fmt.Println(minArray([]int{2,2,2,0,1})) // 2
+}
 
 func Test_offer25(t *testing.T) {
 	// 输入：1->2->4, 1->3->4

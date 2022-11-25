@@ -13,21 +13,21 @@ func Constructor() CQueue {
 	return CQueue{}
 }
 
-func (this *CQueue) AppendTail(value int) {
-	this.InputStack = append(this.InputStack, value)
+func (cq *CQueue) AppendTail(value int) {
+	cq.InputStack = append(cq.InputStack, value)
 }
 
-func (this *CQueue) DeleteHead() int {
-	if len(this.OutputStack) == 0 {
-		for i := len(this.InputStack) - 1; i >= 0; i-- {
-			this.OutputStack = append(this.OutputStack, this.InputStack[i])
+func (cq *CQueue) DeleteHead() int {
+	if len(cq.OutputStack) == 0 {
+		for i := len(cq.InputStack) - 1; i >= 0; i-- {
+			cq.OutputStack = append(cq.OutputStack, cq.InputStack[i])
 		}
-		this.InputStack = make([]int, 0)
+		cq.InputStack = make([]int, 0)
 	}
-	if len(this.OutputStack) == 0 {
+	if len(cq.OutputStack) == 0 {
 		return -1
 	}
-	res := this.OutputStack[len(this.OutputStack)-1]
-	this.OutputStack = this.OutputStack[:len(this.OutputStack)-1]
+	res := cq.OutputStack[len(cq.OutputStack)-1]
+	cq.OutputStack = cq.OutputStack[:len(cq.OutputStack)-1]
 	return res
 }
