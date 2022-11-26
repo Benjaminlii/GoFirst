@@ -68,8 +68,24 @@ func Test_offer10_2(t *testing.T) {
 	fmt.Println(numWays(0))
 }
 func Test_offer11(t *testing.T) {
-	fmt.Println(minArray([]int{3,4,5,1,2})) // 1
-	fmt.Println(minArray([]int{2,2,2,0,1})) // 2
+	fmt.Println(minArray([]int{3, 4, 5, 1, 2})) // 1
+	fmt.Println(minArray([]int{2, 2, 2, 0, 1})) // 2
+}
+func Test_offer12(t *testing.T) {
+	fmt.Println(exist([][]byte{
+		{'A', 'B', 'C', 'E'},
+		{'S', 'F', 'C', 'S'},
+		{'A', 'D', 'E', 'E'},
+	}, "ABCCED")) // true
+	fmt.Println(exist([][]byte{
+		{'A', 'B', 'C', 'E'},
+		{'S', 'F', 'C', 'S'},
+		{'A', 'D', 'E', 'E'},
+	}, "ABCB")) // false
+	fmt.Println(exist([][]byte{
+		{'a', 'b'},
+		{'c', 'd'},
+	}, "abcd")) // false
 }
 
 func Test_offer25(t *testing.T) {
